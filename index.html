@@ -1,0 +1,35 @@
+CentOS 7 Python vitual ENV
+
+pip install virtualenv virtualenvwrapper
+
+mkdir ~/virtualenvs
+
+# virtualenvwrapper
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
+export WORKON_HOME=~/virtualenvs
+[ -f /usr/bin/virtualenvwrapper.sh ] && source /usr/bin/virtualenvwrapper.sh
+[ -f /usr/lib/python2.7/site-packages/virtualenvwrapper ] && source /usr/lib/python2.7/site-packages/virtualenvwrapper
+export PIP_VIRTUALENV_BASE=$WORKON_HOME
+export PIP_RESPECT_VIRTUALENV=true
+
+source .bash_profile 
+
+
+
+创建第一个python 2 的 virtualenv：
+
+mkvirtualenv test
+
+创建第一个python 3 的 virtualenv：
+
+mkvirtualenv -p python3 test
+
+
+
+所有的命令可使用：virtualenvwrapper --help 进行查看，这里列出几个常用的：
+
+创建基本环境：mkvirtualenv [环境名]
+删除环境：rmvirtualenv [环境名]
+激活环境：workon [环境名]
+退出环境：deactivate
+列出所有环境：workon 或者 lsvirtualenv -b
